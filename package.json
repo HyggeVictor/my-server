@@ -1,0 +1,30 @@
+{
+  "name": "my-server",
+  "version": "0.1.0",
+  "description": "A project for my Raspberry Pi 5 server",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HyggeVictor/my-server.git"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "Victor Stampe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HyggeVictor/my-server/issues"
+  },
+  "homepage": "https://github.com/HyggeVictor/my-server#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
