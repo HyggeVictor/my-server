@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/HyggeVictor/my-server/issues"
   },
-  "homepage": "https://github.com/HyggeVictor/my-server#readme"
+  "homepage": "https://github.com/HyggeVictor/my-server#readme",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
 }
