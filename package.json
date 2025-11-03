@@ -1,6 +1,6 @@
 {
   "name": "my-server",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A project for my Raspberry Pi 5 server",
   "main": "dist/server.js",
   "scripts": {
