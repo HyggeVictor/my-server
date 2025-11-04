@@ -1,9 +1,8 @@
 import express, { Request, Response } from "express";
+import { getNotes } from "../controllers/notes";
 
 const router = express.Router();
 
-router.get("/", (req: Request, res: Response) => {
-  res.send("Get Notes WIP");
-});
+router.get("/", getNotes);
 
 export default router;
