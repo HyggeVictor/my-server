@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node --env-file .env dist/server.js"
   },
   "repository": {
     "type": "git",
