@@ -31,3 +31,9 @@ export function findNotes(): Note[] {
   const notes: Note[] = rows.map(mapRowToNote);
   return notes;
 }
+export function findNoteById(id: number): Note {
+  const stmt = db.prepare("SELECT * FROM notes WHERE id = ?");
+  const row = stmt.get(id) as Row;
+  const note = mapRowToNote(row);
+  return note;
+}
