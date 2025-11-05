@@ -8,7 +8,7 @@ interface Note {
   updatedAt: Date;
 }
 
-export function getNotes(): Note[] {
+export function findNotes(): Note[] {
   const stmt = db.prepare("SELECT * FROM notes");
   const rows = stmt.all();
   const notes: Note[] = rows.map((row: any) => ({
