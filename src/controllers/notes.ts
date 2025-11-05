@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
+import { findNotes } from "../models/notes";
 
 export function getNotes(req: Request, res: Response) {
-  res.send("Get Notes WIP");
+  const notes = findNotes();
+  res.json(notes);
 }
