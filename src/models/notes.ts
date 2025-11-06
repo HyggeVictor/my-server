@@ -31,10 +31,12 @@ export function findNotes(): Note[] {
   const notes: Note[] = rows.map(mapRowToNote);
   return notes;
 }
-export function findNoteById(id: number): Note {
+export function findNoteById(id: number): Note | null {
   const stmt = db.prepare("SELECT * FROM notes WHERE id = ?");
   const row = stmt.get(id) as Row;
+  if (!row) return null;
   const note = mapRowToNote(row);
+
   return note;
 }
 export function removeNoteById(id: number): Note | null {
