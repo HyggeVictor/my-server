@@ -37,3 +37,10 @@ export function findNoteById(id: number): Note {
   const note = mapRowToNote(row);
   return note;
 }
+export function removeNoteById(id: number): Note | null {
+  const note = db.prepare("SELECT * FROM notes WHERE id = ?").get(id) as Row;
+  if (!note) return null;
+  db.prepare("DELETE FROM notes WHERE id = ?").run(id);
+
+  return mapRowToNote(note);
+}
