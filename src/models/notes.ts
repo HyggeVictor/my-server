@@ -44,3 +44,12 @@ export function removeNoteById(id: number): Note | null {
 
   return mapRowToNote(note);
 }
+export function insertNote(title: string, content: string): Note {
+  const stmt = db
+    .prepare("INSERT INTO notes (title, content) VALUES (?, ?)")
+    .run(title, content);
+  const note = db
+    .prepare("SELECT * FROM notes WHERE id = ?")
+    .get(stmt.lastInsertRowid) as Row;
+  return mapRowToNote(note);
+}
