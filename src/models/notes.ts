@@ -26,32 +26,42 @@ function mapRowToNote(row: Row): Note {
 }
 
 export function findNotes(): Note[] {
-  const stmt = db.prepare("SELECT * FROM notes");
+  const stmt = db.prepare(`
+    SELECT * FROM notes
+  `);
   const rows = stmt.all() as Row[];
-  const notes: Note[] = rows.map(mapRowToNote);
+  const notes = rows ? rows.map(mapRowToNote) : [];
   return notes;
 }
 export function findNoteById(id: number): Note | null {
-  const stmt = db.prepare("SELECT * FROM notes WHERE id = ?");
+  const stmt = db.prepare(`
+    SELECT * FROM notes
+    WHERE id = ?
+  `);
   const row = stmt.get(id) as Row;
-  if (!row) return null;
-  const note = mapRowToNote(row);
+  const note = row ? mapRowToNote(row) : null;
 
   return note;
 }
 export function removeNoteById(id: number): Note | null {
-  const note = db.prepare("SELECT * FROM notes WHERE id = ?").get(id) as Row;
-  if (!note) return null;
-  db.prepare("DELETE FROM notes WHERE id = ?").run(id);
+  const stmt = db.prepare(`
+    DELETE FROM notes
+    WHERE id = ?
+    RETURNING *
+  `);
+  const row = stmt.get(id) as Row;
+  const note = row ? mapRowToNote(row) : null;
 
-  return mapRowToNote(note);
+  return note;
 }
 export function insertNote(title: string, content: string): Note {
-  const stmt = db
-    .prepare("INSERT INTO notes (title, content) VALUES (?, ?)")
-    .run(title, content);
-  const note = db
-    .prepare("SELECT * FROM notes WHERE id = ?")
-    .get(stmt.lastInsertRowid) as Row;
-  return mapRowToNote(note);
+  const stmt = db.prepare(`
+      INSERT INTO notes (title, content)
+      VALUES (?, ?)
+      RETURNING *
+    `);
+  const row = stmt.get(title, content) as Row;
+  const note = mapRowToNote(row);
+
+  return note;
 }
