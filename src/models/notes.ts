@@ -65,3 +65,19 @@ export function insertNote(title: string, content: string): Note {
 
   return note;
 }
+export function updateNoteById(
+  id: number,
+  title: string,
+  content: string
+): Note | null {
+  const stmt = db.prepare(`
+    UPDATE notes
+    SET title = ?, content = ?, updated_at = CURRENT_TIMESTAMP
+    WHERE id = ?
+    RETURNING *
+  `);
+  const row = stmt.get(title, content, id) as Row;
+  const note = row ? mapRowToNote(row) : null;
+
+  return note;
+}

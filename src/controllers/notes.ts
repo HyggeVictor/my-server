@@ -4,6 +4,7 @@ import {
   findNoteById,
   removeNoteById,
   insertNote,
+  updateNoteById,
 } from "../models/notes";
 
 export function getNotes(req: Request, res: Response): void {
@@ -25,4 +26,10 @@ export function postNote(req: Request, res: Response): void {
   const { title, content } = req.body;
   const note = insertNote(title, content);
   res.status(201).json(note);
+}
+export function putNote(req: Request, res: Response): void {
+  const id = parseInt(req.params.id, 10);
+  const { title, content } = req.body;
+  const note = updateNoteById(id, title, content);
+  res.json(note);
 }
