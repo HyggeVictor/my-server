@@ -50,6 +50,10 @@ export function postNote(req: Request, res: Response): void {
 export function putNote(req: Request, res: Response): void {
   const id = parseInt(req.params.id, 10);
   const { title, content } = req.body;
+  if (!title || !content) {
+    res.status(400).json({ message: "Title and content are required" });
+    return;
+  }
   try {
     const note = updateNoteById(id, title, content);
     res.status(200).json(note);
