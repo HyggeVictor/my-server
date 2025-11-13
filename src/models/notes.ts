@@ -15,6 +15,18 @@ interface Row {
   updated_at: string;
 }
 
+db.prepare(
+  `
+  CREATE TABLE IF NOT EXISTS notes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+  )
+`
+).run();
+
 function mapRowToNote(row: Row): Note {
   return {
     id: row.id,
