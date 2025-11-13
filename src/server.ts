@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import notesRouter from "./routes/notes";
+import notesApiRouter from "./routes/notesApi";
 import path from "path";
 
 const app = express();
@@ -10,7 +10,7 @@ app.set("views", path.join(__dirname, "../views"));
 
 app.use(express.json());
 
-app.use("/notes", notesRouter);
+app.use("/api/notes", notesApiRouter);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello, World!");

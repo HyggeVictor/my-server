@@ -5,7 +5,7 @@ import {
   deleteNoteById,
   postNote,
   putNote,
-} from "../controllers/notes";
+} from "../controllers/notesApi";
 
 const router = express.Router();
 
