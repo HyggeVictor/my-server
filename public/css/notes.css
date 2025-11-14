@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 1rem;
+  padding: 1rem;
+  display: inline-block;
+  background-color: #f6e26b;
+}
