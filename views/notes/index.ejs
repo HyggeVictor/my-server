@@ -6,6 +6,13 @@
     <title>Notes</title>
   </head>
   <body>
-    <%= notes %>
+    <ul>
+      <% notes.forEach(element => { %>
+      <li>
+        <h1><%= element.title %></h1>
+        <p><%= element.content %></p>
+      </li>
+      <% }) %>
+    </ul>
   </body>
 </html>
