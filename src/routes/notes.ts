@@ -1,17 +1,8 @@
 import express, { Request, Response } from "express";
-import {
-  findNotes,
-  findNoteById,
-  removeNoteById,
-  insertNote,
-  updateNoteById,
-} from "../models/notes";
-import { render } from "ejs";
+import { getNotes } from "../controllers/notes";
 
 const router = express.Router();
 
-router.get("/", (req: Request, res: Response) => {
-  res.status(200).render("notes/index", { notes: findNotes() });
-});
+router.get("/", getNotes);
 
 export default router;
