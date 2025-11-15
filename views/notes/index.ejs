@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,6 +12,8 @@
       <li>
         <h1><%= element.title %></h1>
         <p><%= element.content %></p>
+        <p>Oprettet: <%= element.createdAt %></p>
+        <p>Opdateret: <%= element.updatedAt %></p>
       </li>
       <% }) %>
     </ul>
