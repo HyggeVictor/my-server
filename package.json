@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node --env-file .env dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -21,10 +21,14 @@
   },
   "homepage": "https://github.com/HyggeVictor/my-server#readme",
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/ejs": "^3.1.5",
     "@types/express": "^5.0.5",
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "ejs": "^3.1.10",
     "express": "^5.1.0"
   }
 }

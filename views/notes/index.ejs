@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/notes.css" />
+    <title>Notes</title>
+  </head>
+  <body>
+    <ul>
+      <% notes.forEach(element => { %>
+      <li>
+        <h1><%= element.title %></h1>
+        <p><%= element.content %></p>
+        <p>Oprettet: <%= element.createdAt %></p>
+        <p>Opdateret: <%= element.updatedAt %></p>
+      </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
