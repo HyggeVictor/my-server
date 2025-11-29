@@ -5,10 +5,18 @@
   padding: 0;
 }
 
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 li {
   margin: 1rem;
   padding: 1rem;
+  width: 14rem;
   font-family: "Caveat Brush", cursive;
   display: inline-block;
   background-color: #f6e26b;
 }
+
