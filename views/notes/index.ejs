@@ -16,9 +16,12 @@
           <summary>Detaljer</summary>
           <p class="">Oprettet: <%= element.createdAt %></p>
           <p>Opdateret: <%= element.updatedAt %></p>
+          <p>Id: <%= element.id %></p>
         </details>
+        <button onclick="deleteNote('<%= element.id %>')">Slet Note</button>
       </li>
       <% }) %>
     </ul>
+    <script src="/js/notes.js"></script>
   </body>
 </html>

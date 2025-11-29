@@ -20,3 +20,11 @@ li {
   background-color: #f6e26b;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+  color: red;
+}
