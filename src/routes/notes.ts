@@ -3,6 +3,6 @@ import { getNotes } from "../controllers/notes";
 
 const router = express.Router();
 
-router.get("/", getNotes);
+router.get("/index", getNotes);
 
 export default router;
