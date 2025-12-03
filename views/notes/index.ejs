@@ -21,6 +21,7 @@
           <p>Id: <%= element.id %></p>
         </details>
         <button onclick="deleteNote('<%= element.id %>')">Slet Note</button>
+        <a href="update/<%= element.id %>">Opdater</a>
       </li>
       <% }) %>
     </ul>
