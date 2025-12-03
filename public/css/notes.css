@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Caveat Brush", cursive;
 }
 
 ul {
@@ -15,7 +16,6 @@ li {
   margin: 1rem;
   padding: 1rem;
   width: 14rem;
-  font-family: "Caveat Brush", cursive;
   display: inline-block;
   background-color: #f6e26b;
 }
