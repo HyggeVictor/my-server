@@ -8,5 +8,13 @@
   </head>
   <body>
     <h1>Ny Note</h1>
+    <form>
+      <label for="title">Titel</label>
+      <input type="text" name="title" id="title" />
+      <label for="content">Indhold</label>
+      <textarea type="text" name="content" id="content"></textarea>
+      <button type="submit" onclick="createNote(event)">Opret Note</button>
+    </form>
+    <script src="/js/notes/create.js"></script>
   </body>
 </html>
