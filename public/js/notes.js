@@ -10,3 +10,21 @@ function deleteNote(id) {
 
   window.location.reload();
 }
+async function createNote(event) {
+  event.preventDefault();
+
+  const title = document.getElementById("title").value;
+  const content = document.getElementById("content").value;
+
+  const request = await fetch("/api/notes", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ title, content }),
+  });
+  if (request.ok) {
+    alert("Noten er blevet oprettet.");
+    window.location.href = "/notes/index";
+  } else {
+    alert("Der opstod en fejl under oprettelsen af noten.");
+  }
+}
