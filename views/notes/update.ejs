@@ -8,6 +8,21 @@
   </head>
   <body>
     <h1>Opdater Note</h1>
-    <p><%= note.id %></p>
+    <form>
+      <label for="title">Titel</label>
+      <input type="text" name="title" id="title" value="<%= note.title %>" />
+      <label for="content">Indhold</label>
+      <textarea type="text" name="content" id="content">
+      <%= note.content %>
+      </textarea>
+      <button
+        type="submit"
+        data-id="<%= note.id %>"
+        onclick="updateNote(event, this)"
+      >
+        Opret Note
+      </button>
+    </form>
+    <script src="/js/notes.js"></script>
   </body>
 </html>
