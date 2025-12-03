@@ -28,11 +28,3 @@ button:hover {
   cursor: pointer;
   color: red;
 }
-
-a {
-  text-decoration: none;
-  color: black;
-}
-a:hover {
-  color: grey;
-}
