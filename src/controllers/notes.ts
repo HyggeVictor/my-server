@@ -10,3 +10,6 @@ import {
 export function getNotes(req: Request, res: Response): void {
   res.status(200).render("notes/index", { notes: findNotes() });
 }
+export function createNote(req: Request, res: Response): void {
+  res.status(200).render("notes/create");
+}
